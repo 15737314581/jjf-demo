@@ -20,10 +20,11 @@ public class VideoController {
 
     /**
      * 视频列表
+     *
      * @return
      */
     @RequestMapping("list")
-    public JsonData listVideo(){
+    public JsonData listVideo() {
         List<Video> data = videoService.listVideo();
         return JsonData.buildSuccess(data);
 
@@ -31,22 +32,25 @@ public class VideoController {
 
     /**
      * 首页轮播图列表
+     *
      * @return
      */
     @GetMapping("list_banner")
-    public JsonData indexBanner(){
+    public JsonData indexBanner() {
         List<VideoBanner> data = videoService.listVideoBanner();
         return JsonData.buildSuccess(data);
     }
 
     /**
      * 查询视频详情，包含章、集信息
+     *
      * @param videoId
      * @return
      */
     @GetMapping("find_detail_by_id")
-    public JsonData findDetailById(@RequestParam(value = "video_id",required = true) int videoId){
+    public JsonData findDetailById(@RequestParam(value = "video_id", required = true) int videoId) {
         Video data = videoService.findDetailById(videoId);
+        System.out.println(123123123);
         return JsonData.buildSuccess(data);
     }
 }
