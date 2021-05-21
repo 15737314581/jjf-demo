@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="net.xdclass.online_xdclass.mapper.UserMapper">
+    <insert id="save" parameterType="User">
+        insert into user (name,pwd,phone,head_img,create_time) values (#{name,jdbcType=VARCHAR},#{pwd,jdbcType=VARCHAR},
+        #{phone,jdbcType=VARCHAR},#{headImg,jdbcType=VARCHAR},#{createTime,jdbcType=TIMESTAMP})
+    </insert>
+
+</mapper>

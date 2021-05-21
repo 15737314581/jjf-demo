@@ -50,7 +50,6 @@ public class VideoController {
     @GetMapping("find_detail_by_id")
     public JsonData findDetailById(@RequestParam(value = "video_id", required = true) int videoId) {
         Video data = videoService.findDetailById(videoId);
-        System.out.println(123123123);
         return JsonData.buildSuccess(data);
     }
 }
