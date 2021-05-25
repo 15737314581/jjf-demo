@@ -14,7 +14,7 @@ public class CustomExceptionHandler {
 
     @ExceptionHandler(value = Exception.class)
     public JsonData handle(Exception e){
-        logger.error("[系统异常]{}",e);
+        logger.error("[系统异常]{}",e.getMessage());
         if (e instanceof XDException){
             XDException xdException = (XDException)e;
             return JsonData.buildError(xdException.getCode(),xdException.getMsg());

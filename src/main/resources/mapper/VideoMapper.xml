@@ -47,4 +47,8 @@
         order by c.ordered, e.num
     </select>
 
+    <select id="findByVideoId" resultType="Video">
+        select * from video where id = #{video_id}
+    </select>
+
 </mapper>
