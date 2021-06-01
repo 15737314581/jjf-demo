@@ -13,8 +13,10 @@ import net.xdclass.online_xdclass.service.VideoOrderServlet;
 import net.xdclass.online_xdclass.utils.JsonData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -30,6 +32,7 @@ public class VideoOederServletImpl implements VideoOrderServlet {
 
 
     @Override
+    @Transactional
     public int save(int userId, int videoId) {
         VideoOrder videoOrder_old = videoOrderMapper.findByUserIdAndVideoIdAndState(userId,videoId,1);
         if (videoOrder_old != null){
@@ -66,5 +69,11 @@ public class VideoOederServletImpl implements VideoOrderServlet {
 
         return rows;
 
+    }
+
+    @Override
+    public List<VideoOrder> listOrderByUserId(Integer userId) {
+        List<VideoOrder> videoOrderList = videoOrderMapper.listOrderByUserId(userId);
+        return videoOrderList;
     }
 }

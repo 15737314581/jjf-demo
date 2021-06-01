@@ -1,8 +1,10 @@
 package net.xdclass.online_xdclass.controller;
 
+
 import net.xdclass.online_xdclass.model.entity.Video;
 import net.xdclass.online_xdclass.model.entity.VideoBanner;
 import net.xdclass.online_xdclass.service.VideoService;
+
 import net.xdclass.online_xdclass.utils.JsonData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +19,7 @@ import java.util.List;
 public class VideoController {
     @Autowired
     private VideoService videoService;
+
 
     /**
      * 视频列表
