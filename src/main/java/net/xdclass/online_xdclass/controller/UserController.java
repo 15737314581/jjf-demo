@@ -49,7 +49,7 @@ public class UserController {
     public JsonData findUserInfoByToken(HttpServletRequest request){
         Integer userId = (Integer) request.getAttribute("user_id");
         User user = userService.findByUserId(userId);
-        System.out.println("2222");
+        System.out.println("3333");
         return JsonData.buildSuccess(user);
     }
 }
